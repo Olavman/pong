@@ -1,0 +1,125 @@
+[gd_scene load_steps=14 format=3 uid="uid://blra1gtbylqe0"]
+
+[ext_resource type="Script" path="res://Scripts/Game.cs" id="1_tk4nl"]
+[ext_resource type="PackedScene" uid="uid://36tylwwcmj8d" path="res://Scenes/bat.tscn" id="1_x6ei5"]
+[ext_resource type="PackedScene" uid="uid://casy5dmxlshps" path="res://Scenes/ball.tscn" id="3_n12h1"]
+[ext_resource type="PackedScene" uid="uid://cpdhjvt6h7i6h" path="res://Scenes/score_counter.tscn" id="4_0376y"]
+[ext_resource type="PackedScene" uid="uid://d1jmtb5l36ayv" path="res://Scenes/countdown.tscn" id="5_e28q4"]
+[ext_resource type="AudioStream" uid="uid://dwwafnjmjdfiu" path="res://Sounds/point gained.wav" id="6_b180f"]
+
+[sub_resource type="Gradient" id="Gradient_7seyy"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nj48s"]
+gradient = SubResource("Gradient_7seyy")
+
+[sub_resource type="Gradient" id="Gradient_mi5tm"]
+offsets = PackedFloat32Array(0.534909, 0.535983, 0.997852, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jv7tj"]
+gradient = SubResource("Gradient_mi5tm")
+width = 8
+height = 460
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, -0.185)
+repeat = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f64n8"]
+texture = SubResource("GradientTexture2D_jv7tj")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qu56e"]
+blend_mode = 1
+
+[sub_resource type="Environment" id="Environment_c2ocv"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 5.3
+glow_strength = 0.72
+glow_bloom = 0.17
+glow_blend_mode = 1
+glow_hdr_luminance_cap = 1.33
+
+[node name="Game" type="Node"]
+script = ExtResource("1_tk4nl")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_nj48s")
+
+[node name="Divider" type="Panel" parent="."]
+modulate = Color(0, 1, 1, 1)
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_f64n8")
+
+[node name="Bat1" parent="." instance=ExtResource("1_x6ei5")]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0, 1)
+position = Vector2(64, 196)
+IsAI = true
+
+[node name="Bat2" parent="." instance=ExtResource("1_x6ei5")]
+unique_name_in_owner = true
+modulate = Color(0, 0, 1, 1)
+position = Vector2(657, 208)
+
+[node name="Ball" parent="." instance=ExtResource("3_n12h1")]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_qu56e")
+position = Vector2(262, 321)
+Speed = 450.0
+
+[node name="ScoreCounter1" parent="." instance=ExtResource("4_0376y")]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+grow_horizontal = 2
+
+[node name="ScoreCounter2" parent="." instance=ExtResource("4_0376y")]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+grow_horizontal = 2
+horizontal_alignment = 2
+
+[node name="Countdown" parent="." instance=ExtResource("5_e28q4")]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -15.5
+offset_right = 20.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="PointSoundPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_b180f")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_c2ocv")

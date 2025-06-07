@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1jmtb5l36ayv"]
+
+[ext_resource type="Script" path="res://Scripts/Countdown.cs" id="1_8exne"]
+[ext_resource type="AudioStream" uid="uid://dkos4vbpuoagm" path="res://Sounds/click.wav" id="2_17scv"]
+
+[node name="Countdown" type="Label"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_8exne")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_17scv")

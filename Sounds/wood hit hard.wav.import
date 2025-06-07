@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bnjdea38a5dpl"
+path="res://.godot/imported/wood hit hard.wav-43b5daa45e862223d2fcf532bfe8f2af.sample"
+
+[deps]
+
+source_file="res://Sounds/wood hit hard.wav"
+dest_files=["res://.godot/imported/wood hit hard.wav-43b5daa45e862223d2fcf532bfe8f2af.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

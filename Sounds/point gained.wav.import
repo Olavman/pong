@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dwwafnjmjdfiu"
+path="res://.godot/imported/point gained.wav-d38298fc4bdb5c4b714b19f5ec26e842.sample"
+
+[deps]
+
+source_file="res://Sounds/point gained.wav"
+dest_files=["res://.godot/imported/point gained.wav-d38298fc4bdb5c4b714b19f5ec26e842.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

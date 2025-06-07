@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpdhjvt6h7i6h"]
+
+[ext_resource type="Script" path="res://Scripts/ScoreCounter.cs" id="1_r55ex"]
+
+[node name="ScoreCounter" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
+script = ExtResource("1_r55ex")
